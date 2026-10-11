@@ -1,0 +1,59 @@
+/* The opening is a spatial composition, built from native SVG and CSS. */
+html.arrival-pending .hero h1{animation-play-state:paused}html.arrival-pending .hero-image-wrap,html.arrival-revealed .hero-image-wrap{animation:none}
+#arrival-loader{position:fixed;inset:0;width:100%;height:100%;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;color:#e8dbcf;background:transparent;overflow:hidden;outline:none;font-family:'Manrope',Arial,sans-serif;z-index:1000}
+#arrival-loader::backdrop{background:transparent}
+#arrival-loader .arrival-door{position:absolute;top:0;bottom:0;width:50.1%;background:#4a1f2c;transition:transform .84s cubic-bezier(.76,0,.24,1);z-index:-1}
+.arrival-door-left{left:0}.arrival-door-right{right:0}
+#arrival-loader.is-departing .arrival-door-left{transform:translateX(-101%)}
+#arrival-loader.is-departing .arrival-door-right{transform:translateX(101%)}
+.arrival-content{display:flex;flex-direction:column;justify-content:space-between;height:100%;padding:32px 5vw;opacity:1;transition:opacity .4s ease,transform .75s ease}
+#arrival-loader.is-departing .arrival-content{opacity:0;transform:translateY(-25px);pointer-events:none}
+.arrival-top,.arrival-bottom{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-shrink:0}
+.arrival-top{font-size:10px;letter-spacing:1.6px;line-height:1.5;border-bottom:1px solid #e8dbcf33;padding-bottom:22px}
+.arrival-top>span:first-child{font-weight:600}.arrival-stage{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.arrival-scene{display:block;width:min(78vw,850px);height:min(54vh,560px);overflow:visible;flex-shrink:1}
+.arrival-side-note{position:absolute;left:0;top:48%;font-size:9px;letter-spacing:1.5px;line-height:1.9;color:#d4b29c}
+.arrival-title-wrap{text-align:center;margin-top:-12px;position:relative}
+#arrival-title{font-size:clamp(32px,4.5vw,66px);font-weight:400;letter-spacing:-.04em;line-height:1.2}
+#arrival-title em{font-family:'Bodoni Moda',Georgia,serif;letter-spacing:-.04em;font-size:1.1em}
+#arrival-description{font-size:10px;letter-spacing:1.1px;line-height:1.7;margin-top:16px;color:#d4b29c}
+.arrival-bottom{border-top:1px solid #e8dbcf33;padding-top:22px;position:relative}
+.arrival-chapters{display:flex;gap:42px;list-style:none;margin:0;padding:0;font-size:11px}
+.arrival-chapters li{color:#b99083;transition:color .3s}
+.arrival-chapters li.is-current{color:#f5ede3}.arrival-chapters li.is-complete{color:#d9bbaa}
+.arrival-chapters span{font-size:9px;display:inline-block;margin-right:10px}
+.arrival-chapters li.is-current:after{content:'';display:block;height:1px;background:#d6b29d;margin-top:8px;transform-origin:left;animation:arrival-rule .8s ease both}
+#skip-arrival{display:flex;align-items:center;gap:35px;min-height:44px;font-size:11px;border:0;background:none;color:#e8dbcf;cursor:pointer;padding:0}
+#skip-arrival span{font-size:27px}#skip-arrival:focus-visible{outline:2px solid #e8dbcf;outline-offset:8px}
+#replay-arrival{font-size:inherit;line-height:inherit;min-height:24px}
+.arrival-floor,.arrival-wall,.arrival-light,.arrival-object,.arrival-shadow{opacity:0;transform-box:fill-box;transform-origin:center bottom}
+.arrival-outline{stroke-dasharray:1;stroke-dashoffset:1}.arrival-guides,.arrival-coordinate{opacity:0}
+#arrival-loader.is-running .arrival-outline{animation:arrival-draw 1.2s cubic-bezier(.4,0,.2,1) both,arrival-outline-fade .6s 1.35s both}
+#arrival-loader.is-running .arrival-guides,#arrival-loader.is-running .arrival-coordinate{animation:arrival-guide .8s ease both}
+#arrival-loader.is-running .arrival-shadow{animation:arrival-fill 1s .45s both}
+#arrival-loader.is-running .arrival-floor{animation:arrival-floor .9s .45s cubic-bezier(.2,.7,.2,1) both}
+#arrival-loader.is-running .arrival-wall-left{animation:arrival-wall 1.05s 1.25s cubic-bezier(.2,.8,.2,1) both}
+#arrival-loader.is-running .arrival-wall-right{animation:arrival-wall 1.05s 1.5s cubic-bezier(.2,.8,.2,1) both}
+#arrival-loader.is-running .arrival-object{animation:arrival-wall .7s 2s cubic-bezier(.2,.8,.2,1) both}
+#arrival-loader.is-running .arrival-light{animation:arrival-fill .7s 2.5s both}
+#arrival-loader.is-running .arrival-light-sweep{animation:arrival-sun 1s 2.5s cubic-bezier(.2,.6,.2,1) both}
+@keyframes arrival-draw{to{stroke-dashoffset:0}}@keyframes arrival-outline-fade{to{opacity:.15}}
+@keyframes arrival-fill{from{opacity:0}to{opacity:1}}@keyframes arrival-guide{to{opacity:.65}}
+@keyframes arrival-floor{from{opacity:0;transform:translateY(16px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes arrival-wall{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+@keyframes arrival-sun{from{transform:translateX(0) rotate(20deg)}to{transform:translateX(1000px) rotate(20deg)}}
+@keyframes arrival-rule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:600px){.arrival-content{padding:25px 6vw}.arrival-top{font-size:9px;letter-spacing:1px;align-items:start}.arrival-top>span:last-child{max-width:130px;text-align:right;line-height:1.7}.arrival-side-note{left:0;top:8%;font-size:8px}.arrival-scene{width:112%;height:min(46vh,420px)}.arrival-title-wrap{margin-top:0}#arrival-title{font-size:36px}#arrival-description{font-size:9px;letter-spacing:.4px;margin-top:12px}.arrival-bottom{align-items:flex-end;gap:10px}.arrival-chapters{gap:15px;font-size:10px}.arrival-chapters span{display:block;margin:0 0 8px;font-size:8px}#skip-arrival{gap:12px;font-size:10px}#skip-arrival span{font-size:23px}}
+@media(max-height:600px) and (min-width:601px){.arrival-content{padding-top:18px;padding-bottom:18px}.arrival-top{padding-bottom:12px}.arrival-bottom{padding-top:12px}.arrival-scene{height:48vh}#arrival-title{font-size:32px}#arrival-description{margin-top:5px}}
+@media(prefers-reduced-motion:reduce){#arrival-loader .arrival-door,.arrival-content{transition:none}.arrival-floor,.arrival-wall,.arrival-light,.arrival-object,.arrival-shadow,.arrival-guides,.arrival-coordinate{opacity:1;transform:none}.arrival-outline{stroke-dashoffset:0;opacity:.15}.arrival-light-sweep{display:none}}
+
+/* The assembled room resolves into the supplied entrance photograph. */
+.arrival-scene{transition:opacity .45s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+#arrival-loader.has-photo .arrival-scene{opacity:0;transform:scale(1.04)}
+.arrival-photo{position:fixed;overflow:hidden;opacity:0;pointer-events:none;z-index:2;transition:opacity .45s ease,left .84s cubic-bezier(.76,0,.24,1),top .84s cubic-bezier(.76,0,.24,1),width .84s cubic-bezier(.76,0,.24,1),height .84s cubic-bezier(.76,0,.24,1),border-radius .84s cubic-bezier(.76,0,.24,1)}
+.arrival-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;filter:saturate(.83)}
+#arrival-loader.has-photo .arrival-photo{opacity:1}
+#arrival-loader.is-departing:not(.is-handoff) .arrival-photo{opacity:0}
+.arrival-top{font-size:11px;letter-spacing:1px}.arrival-side-note{font-size:10px;letter-spacing:1px}#arrival-description{font-size:12px;letter-spacing:.4px}.arrival-chapters{font-size:12px;gap:35px}.arrival-chapters span{font-size:10px}#skip-arrival{font-size:12px}
+@media(max-width:600px){.arrival-top{font-size:10px;letter-spacing:.5px}.arrival-side-note{font-size:9px}.arrival-chapters{gap:16px;font-size:11px}.arrival-chapters span{font-size:10px}#skip-arrival{font-size:11px;gap:12px}#arrival-description{font-size:11px;letter-spacing:.1px}}
+@media(prefers-reduced-motion:reduce){.arrival-photo,.arrival-scene{transition:none}}
