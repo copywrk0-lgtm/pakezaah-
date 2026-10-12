@@ -79,5 +79,41 @@
     "asset": "share-preview.jpg",
     "original": "AHRPTWnj-h4YyQVYEscHDT1t4LZKp1W01s1UFczdkyFJKRS9KSmYiwKTogvIql4ZIRTt5pvaD8_oDbFsf8rNWkDhPWP525hSBPQoqcdEyrM_NPu9WiQ6TYkaul6E8yE4FfEI8j02LQfkc08cLS4w1600-h900-k-no(1).jpg",
     "purpose": "Unmodified supplied landscape image for social previews"
+  },
+  {
+    "asset": "film-1.webp",
+    "derived_from": "film-1.mp4",
+    "frame_seconds": 1.47,
+    "purpose": "Source-resolution poster; embedded studio credit retained"
+  },
+  {
+    "asset": "film-2.webp",
+    "derived_from": "film-2.mp4",
+    "frame_seconds": 12.55,
+    "purpose": "Source-resolution poster; embedded studio credit retained"
+  },
+  {
+    "asset": "film-3.webp",
+    "derived_from": "film-3.mp4",
+    "frame_seconds": 8.16,
+    "purpose": "Source-resolution poster; embedded studio credit retained"
+  },
+  {
+    "asset": "film-4.webp",
+    "derived_from": "film-4.mp4",
+    "frame_seconds": 8.46,
+    "purpose": "Source-resolution poster; embedded studio credit retained"
+  },
+  {
+    "asset": "film-5.webp",
+    "derived_from": "film-5.mp4",
+    "frame_seconds": 13.61,
+    "purpose": "Source-resolution poster; embedded studio credit retained"
+  },
+  {
+    "asset": "film-6.webp",
+    "derived_from": "film-6.mp4",
+    "frame_seconds": 2.48,
+    "purpose": "Source-resolution poster; embedded studio credit retained"
   }
 ]
